@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async function () {
          let responce, data;
          try {
             responce = await fetch(`${url}`);
-            if (responce.status.ok === false) {
+            if (responce.ok === false) {
                throw new Error(`Responce: ${responce.url} failed with ${responce.status}`);
             }
             data = await responce.json();
