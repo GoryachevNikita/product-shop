@@ -1,0 +1,233 @@
+@charset "UTF-8";
+/*ResetCss*/
+/*1.Обнуляем отступы*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400);
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/*2.Убираем лигии обводки ссылок*/
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+  color: inherit;
+}
+
+/*3.Делаем основные теги блочными*/
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+/*4.Уравниваем рамеры шрифтов и элентов в структуре*/
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*5.Наследование тегов форм семейства шрифтов*/
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+/*6.Обнуление определенных кроссбраузерных параметров у тегов форм*/
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: inherit;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*====================================================================*/
+@font-face {
+  font-family: AmstelvarAlpha;
+  src: url(../fonts/AmstelvarAlpha.ttf);
+}
+/*=================Variables====================================*/
+html {
+  font-size: 16px;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template: minmax(90px, auto) 1fr minmax(90px, auto)/1fr;
+}
+
+.container {
+  width: 100vw;
+  height: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*==============================================================*/
+.header {
+  background-color: rgba(30, 40, 50, 0.0509803922);
+  margin-bottom: 36px;
+}
+.header .header__title {
+  text-align: center;
+  margin-top: 36px;
+}
+.header .header__title::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: rgb(118, 109, 109);
+  margin-top: 25px;
+}
+.header .header__title h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.header .header__title h1 span {
+  margin: 0 10px;
+}
+.header .header__title h1::before, .header .header__title h1::after {
+  content: "";
+  display: inline-block;
+  width: 31px;
+  height: 15px;
+  background-image: url(../images/header_logo.svg);
+}
+
+/*========MAIN================================*/
+.products {
+  display: grid;
+  grid-template: auto 1fr/1fr;
+  row-gap: 35px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+.categories__list {
+  display: flex;
+}
+.categories__item {
+  color: rgba(0, 0, 0, 0.5);
+}
+.categories__item:not(:last-child) {
+  margin-right: 40px;
+}
+.categories__item a:hover {
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.categories__option {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.active {
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 312px);
+  grid-auto-rows: 500px;
+  gap: 24px;
+}
+
+.product {
+  display: grid;
+  grid-template: 1fr minmax(65px, auto)/1fr;
+  row-gap: 5px;
+  border: 1px solid #000;
+  padding: 0 10px;
+}
+.product__image {
+  position: relative;
+}
+.product__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.product__info {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  line-height: 135.5%;
+  justify-content: end;
+}
+.product__name {
+  flex: 0 0 100%;
+}
+
+/*======================FOOTER================================*/
